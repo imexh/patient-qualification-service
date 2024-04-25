@@ -38,10 +38,6 @@ public class PatientService implements IPatientService {
     public boolean isPatientQualified(final String id) {
         final Patient patient = patientRepository.getPatientById(id);
 
-        return isPatientQualified(patient);
-    }
-
-    private boolean isPatientQualified(final Patient patient) {
-        return !(Double.parseDouble(patient.income()) >= 100000);
+        return patient.isQualified();
     }
 }

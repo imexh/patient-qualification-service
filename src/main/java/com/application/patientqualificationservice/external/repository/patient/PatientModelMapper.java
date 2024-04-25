@@ -12,12 +12,13 @@ public class PatientModelMapper {
     static PatientDocument toDocument(final Patient patient) {
         PatientDocument patientDocument = new PatientDocument();
 
-        patientDocument.id = patient.id();
-        patientDocument.name = patient.name();
-        patientDocument.email = patient.email();
-        patientDocument.birthDate = patient.birthDate();
-        patientDocument.income = patient.income();
-        patientDocument.contact = patient.contact();
+        patientDocument.id = patient.getId();
+        patientDocument.name = patient.getName();
+        patientDocument.email = patient.getEmail();
+        patientDocument.birthDate = patient.getBirthDate();
+        patientDocument.income = patient.getIncome();
+        patientDocument.contact = patient.getContact();
+        patientDocument.isQualified = patient.isQualified();
 
         return patientDocument;
     }

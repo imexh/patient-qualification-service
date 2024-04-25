@@ -30,4 +30,8 @@ public class PatientDocument {
     @NotNull
     @Field(name = "contact")
     String contact;
+
+    @NotNull
+    @Field(name = "is_qualified")
+    boolean isQualified;
 }
