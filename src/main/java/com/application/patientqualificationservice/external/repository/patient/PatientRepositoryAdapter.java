@@ -37,4 +37,13 @@ public class PatientRepositoryAdapter implements IPatientRepository {
         List<PatientDocument> patientDocuments = mongoTemplate.findAll(PatientDocument.class);
         return PatientModelMapper.toPatientList(patientDocuments);
     }
+
+    @Override
+    public List<Patient> getAllQualifiedPatients() {
+        List<PatientDocument> patientDocuments = mongoTemplate.findAll(PatientDocument.class);
+
+        patientDocuments.removeIf(patientDocument -> !patientDocument.isQualified);
+
+        return PatientModelMapper.toPatientList(patientDocuments);
+    }
 }

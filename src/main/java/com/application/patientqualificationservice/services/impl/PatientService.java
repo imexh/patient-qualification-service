@@ -40,4 +40,11 @@ public class PatientService implements IPatientService {
 
         return patient.isQualified();
     }
+
+    @Override
+    public List<PatientViewResponseDTO> getAllQualifiedPatients() {
+        return patientRepository.getAllQualifiedPatients().stream()
+                .map(PatientViewResponseDTO::new)
+                .collect(Collectors.toList());
+    }
 }

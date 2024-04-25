@@ -13,4 +13,6 @@ public interface IPatientService {
     List<PatientViewResponseDTO> getAllPatients();
 
     boolean isPatientQualified(String id);
+
+    List<PatientViewResponseDTO> getAllQualifiedPatients();
 }

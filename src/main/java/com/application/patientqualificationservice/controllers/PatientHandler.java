@@ -41,4 +41,9 @@ public class PatientHandler {
             @PathVariable final String id) {
         return new ResponseEntity<>(this.patientService.isPatientQualified(id), HttpStatus.OK);
     }
+
+    @GetMapping("/qualified/patients")
+    public ResponseEntity<List<PatientViewResponseDTO>> getAllQualifiedPatients() {
+        return new ResponseEntity<>(this.patientService.getAllQualifiedPatients(), HttpStatus.OK);
+    }
 }
